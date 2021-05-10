@@ -1,0 +1,9 @@
+
+
+object Expressions extends App {
+  val x = 1 + 2 // expressions
+  println(x)
+
+  println(1 == x)
+
+}

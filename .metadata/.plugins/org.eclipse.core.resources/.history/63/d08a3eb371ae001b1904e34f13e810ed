@@ -1,0 +1,54 @@
+import scala.annotation.tailrec
+
+
+object Recursion extends App {
+  
+  def factorial(n: Int):Int =
+    if(n <= 1)1
+    else {
+      println("computing factorial of " + n + " "+ "I first need to compute factorial of " + (n-1))
+    val result = n * factorial(n-1) // 10 * 9 * 8
+    
+    result
+    }
+  factorial(100000)
+  
+  // factorial in a recursive way
+  
+  def recursiveFactorial(num: BigInt): BigInt = {     
+    @tailrec
+    def factHelper(x:BigInt,acc:BigInt):BigInt = 
+      if(x <=1) acc
+      else factHelper(x - 1, x * acc)  //TAIL RECURSION == use recursive call as the last expression
+    factHelper(num, 1)
+    
+  }
+ // println(recursiveFactorial(5000))
+  
+  // WHEN YOU NEED LOOPS, USE_TAIL_RECURSION.
+  
+  
+  /*
+    1.concatenatre a string n times
+    2. Isprime function
+    3. Fibonacci function 
+  */
+  
+  def concatenate(input: String, ntimes: Int): String = {
+    def helper(ntimes:Int,acc:String): String =
+      if(ntimes <= 1) acc
+      else helper(ntimes -1, ntimes + acc)
+      
+      helper(ntimes,"")
+  }
+  
+  concatenate("varun",10)
+  
+  
+  
+  
+  
+  
+  
+  
+}

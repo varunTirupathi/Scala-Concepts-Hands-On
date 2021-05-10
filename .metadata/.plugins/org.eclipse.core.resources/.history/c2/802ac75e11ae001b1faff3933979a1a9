@@ -1,0 +1,24 @@
+
+
+object Expressions extends App {
+  val x = 1 + 2 // expressions
+  println(x)
+
+  println(1 == x)
+  
+  // == != > >= < <=
+  
+  println(!(1 == x))
+
+  var aVariable = 2
+  
+  aVariable += 3   // -=, *= /=
+  println(aVariable)
+  
+  // Instructions (DO) vs Expressions (VALUE)
+  
+  // IF expression 
+  val aCondition = true
+  val aConditionValue = if(aCondition) 5 else 3
+  
+}

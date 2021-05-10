@@ -1,0 +1,7 @@
+object Demo {
+  println("Welcome to the Scala workshee")        //> Welcome to the Scala workshee
+
+var num:Int = 8
+
+
+}

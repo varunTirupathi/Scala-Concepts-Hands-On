@@ -1,0 +1,14 @@
+
+
+object Recursion extends App {
+  
+  def factorial(n: Int):Int =
+    if(n <= 1)1
+    else {
+    val result = n * factorial(n-1)
+    println("computing factorial of " + n + "I first need to compute factorial of " + (n-1))
+    result
+    }
+  factorial(10)
+  
+}

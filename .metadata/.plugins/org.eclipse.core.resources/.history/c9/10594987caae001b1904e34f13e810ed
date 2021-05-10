@@ -1,0 +1,16 @@
+
+
+object InheritanceAndTraits extends App {
+  
+  class Animal {
+   protected  def eat = println("nomnom")
+    
+  }
+  class Cat extends Animal {
+     val cat = new Cat
+  cat.eat
+  }
+  
+ 
+  
+}

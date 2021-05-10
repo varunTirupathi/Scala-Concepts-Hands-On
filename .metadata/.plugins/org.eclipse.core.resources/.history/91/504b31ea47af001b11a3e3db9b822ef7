@@ -1,0 +1,82 @@
+
+
+
+
+  abstract class MyList {
+
+//    /*
+//    head = first element  of the list
+//
+//
+//
+//*/
+//
+//    val list = 1 :: 2 :: 3 :: 4 :: 5 :: Nil
+//    val X: List[Int] = List(1, 2, 3)
+//
+//    def headfirst(x: List[Int]) = println(x.head)
+//  }
+//  class hello extends MyList {
+//
+//    var h = new hello
+//    h.headfirst(List(1, 2, 3))
+    
+    
+    def head: Int
+    def tail: MyList
+    def isEmpty: Boolean
+    def add(Element:Int): MyList
+  }
+  
+object Empty extends MyList {
+  
+    def head: Int = throw new NoSuchElementException
+    def tail: MyList = throw new NoSuchElementException
+    def isEmpty: Boolean = true
+    def add(Element:Int): MyList = new cons(Element, Empty)
+}
+
+class cons(h: Int,t:MyList) extends MyList {
+  
+    def head: Int = h
+    def tail: MyList = t
+    def isEmpty: Boolean= false
+    def add(Element:Int): MyList= new cons(Element, this)
+  
+  
+}
+
+object ListTest extends App {
+  val list = new cons(1, new cons(2, Empty))
+  println(list.head)
+  println(list.tail.head)
+  println(list.add(4).head)
+  
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

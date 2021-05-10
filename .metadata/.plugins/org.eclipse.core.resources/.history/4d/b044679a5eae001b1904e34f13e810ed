@@ -1,0 +1,15 @@
+
+
+object Functions extends App {
+  
+  def aFunction(a : String, b:Int): String = {
+    a + " " + b // expression in block
+  }
+  
+  println(aFunction("varun", 2))
+  
+  def AparameterlessFunction():Int = 42
+  
+  println(AparameterlessFunction)
+    
+}

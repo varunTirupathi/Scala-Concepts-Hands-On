@@ -1,0 +1,22 @@
+package Exercises
+
+object one extends App {
+  
+  def greeting(name: String, age:Int) = {
+    var n = name
+    var a = age
+    "Hi my name is" + n + "and I am " + a + "years old" 
+  }
+  
+  println(greeting("varun",12))
+  
+  // 1 1 2 3 5 8 13
+  def factorial(num:Int): Int = {
+    if(num < 1) num 
+    else if(num == 1) 1
+    else factorial(num - 1) + factorial(num - 2)     
+  }
+  
+  factorial(3)
+  
+}

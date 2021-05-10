@@ -1,0 +1,21 @@
+object Demo {
+  println("Welcome to the Scala workshee")
+  //scala supports concurrency and distribution so variables should be declared as val(constants)
+val num: Int = 20
+
+val num1: Int = 10
+
+var sum = num + num1
+
+println(num1)
+
+
+class Student(name:String = "varun", var rollno: Int)
+
+var s = new Student(rollno = 123)
+s.rollno
+
+
+
+
+}

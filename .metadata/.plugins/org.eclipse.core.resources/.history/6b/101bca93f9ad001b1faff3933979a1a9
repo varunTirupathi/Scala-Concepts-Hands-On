@@ -1,0 +1,14 @@
+object Demo {
+  println("Welcome to the Scala workshee")        //> Welcome to the Scala workshee
+
+var num:Int = 8                                   //> num  : Int = 8
+
+val num1: Int = 10                                //> num1  : Int = 10
+
+println(num1)                                     //> 10
+
+
+
+
+
+}

@@ -1,0 +1,33 @@
+object Demo {
+  println("Welcome to the Scala workshee")        //> Welcome to the Scala workshee
+  //scala supports concurrency and distribution so variables should be declared as val(constants)
+val num: Int = 20                                 //> num  : Int = 20
+
+val num1: Int = 10                                //> num1  : Int = 10
+
+var sum = num + num1                              //> sum  : Int = 30
+
+println(num1)                                     //> 10
+
+
+case class Student(name:String = "varun", var rollno: Int)
+{
+  def show() = {
+   println("Hi how are you")
+   }
+   
+   def >(s:Student): Boolean = { rollno > s.rollno
+    
+}
+var s = new Student(rollno = 123)                 //> s  : Demo.Student = Student(varun,123)
+s.rollno                                          //> res0: Int = 123
+s.show()                                          //> Hi how are you
+
+var s1 = new Student(rollno = 113)
+
+ s.>(s1)
+
+
+
+
+}

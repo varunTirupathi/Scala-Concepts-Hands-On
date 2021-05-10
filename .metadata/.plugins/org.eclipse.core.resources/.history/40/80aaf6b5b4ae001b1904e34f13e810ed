@@ -1,0 +1,24 @@
+
+
+object MethodNotations extends App {
+
+  class Person(val name: String, favouritemovie: String){
+    def likes(movie: String): Boolean = 
+      movie == favouritemovie
+    
+      
+      
+    def hangoutwith(person: Person): String = s"${this.name} hang outs with ${person.name}"
+    val mary = new Person("Mary","Inception")
+    println(mary.likes("Inception"))
+    println(mary likes "inception") // equivalent natural language
+    // infix notation = operator notation
+    
+    // operators in scala
+//    
+//    val hary = new Person("Hary","mag")
+//    println(hary likes "mag")
+//    println(hary hangoutwith mary)
+    
+  }
+}

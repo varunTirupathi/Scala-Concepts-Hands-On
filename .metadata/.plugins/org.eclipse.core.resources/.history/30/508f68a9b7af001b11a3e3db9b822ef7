@@ -1,0 +1,23 @@
+package FunctionalProgramming
+
+object Whatsafunction extends App {
+  
+  // use functuions as first classs elememgs
+  
+
+    
+    var doubler = new Function1[Int,Int]{
+      override def apply(value :Int): Int = value * 2
+    }
+    
+    var StringtoIntconverter = new Function1[String,Int]{
+      override def apply(mess: String):Int = mess.toInt
+    }
+    
+    println(StringtoIntconverter("21") + 2)
+    
+  
+  
+  
+  
+}

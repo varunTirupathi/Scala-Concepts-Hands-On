@@ -1,0 +1,21 @@
+
+
+object AbstractDataTypes extends App {
+  
+  abstract class Animal {
+    var creatureType:String
+    def eat: Unit
+  }
+  
+  class Dog extends Animal {
+    override val creatureType: String = "canine"
+    override def eat: Unit = ("hello")
+    
+  }
+  //traits
+  
+  trait carnivore {
+    def eat (animal:Animal): unit
+  }
+  
+}

@@ -1,0 +1,11 @@
+package Exercises
+
+object one extends App {
+  
+  def greeting(name: String, age:Int) = {
+    "Hi my name is $name and I am $age years old" 
+  }
+  
+  greeting("varun",12)
+  
+}

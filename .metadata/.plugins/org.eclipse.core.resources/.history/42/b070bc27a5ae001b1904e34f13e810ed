@@ -1,0 +1,17 @@
+package OOP
+
+object Basics extends App {
+  
+  val person = new Person("varun",12)
+  
+  println(person.greet("varun"))
+  
+}
+class Person(val name: String, val age:Int){ //constructor 
+  val x = 20
+  
+def greet(name:String): Unit = println(s"hiii $name")
+}
+
+// Class parameters are not fields
+

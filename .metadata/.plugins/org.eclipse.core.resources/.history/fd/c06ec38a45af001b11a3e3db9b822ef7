@@ -1,0 +1,30 @@
+
+
+abstract class MyList extends App {
+  
+  
+  
+  /*
+    head = first element  of the list
+      
+      
+  
+*/
+  
+val list = 1:: 2 ::3 :: 4 :: 5:: Nil
+val X:List[Int] = List(1,2,3)
+
+
+def headfirst(x: List[Int]) = println(x.head)
+}
+class hello  extends MyList {
+  
+  var h = new hello
+  h.headfirst(List(1,2,3))
+  
+}
+
+
+
+
+

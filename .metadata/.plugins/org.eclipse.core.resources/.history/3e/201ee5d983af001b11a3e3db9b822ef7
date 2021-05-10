@@ -1,0 +1,27 @@
+object Exceptions extends App{
+  
+  val x: String = null
+  //println(x.length())
+  //this will crash
+  
+  // 1. throwing exceptions
+  
+  //val aWierdValue: String = throw new NullPointerException
+  
+  //throwable classes extends the Throwable class.
+  // Exception and Error are major throwable subtypes
+
+  // 2. how to catch exceptions
+  
+  def getInt(withExceptions: Boolean): Int =
+    if(withExceptions) throw new RuntimeException("no int for you") 
+    else 42
+    try {
+      getInt(false)
+    } catch {
+      case e: RuntimeException => println("caught run time exception")
+    }finally {
+      println("always executed")
+    }
+  }
+  

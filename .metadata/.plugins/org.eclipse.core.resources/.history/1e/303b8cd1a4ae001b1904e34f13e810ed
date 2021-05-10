@@ -1,0 +1,8 @@
+package OOP
+
+object Basics extends App {
+  
+  val person = new Person
+  println(person)
+}
+class Person

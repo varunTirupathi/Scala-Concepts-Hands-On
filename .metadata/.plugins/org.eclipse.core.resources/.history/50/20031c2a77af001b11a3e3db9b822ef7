@@ -1,0 +1,105 @@
+abstract class MyList[+A] {
+
+  def head: A
+  def tail: MyList[A]
+  def isEmpty: Boolean
+  def add[B >: A](Element: B): MyList[B]
+  def printElements: String
+  //polymorphic call
+  override def toString: String = "[" + printElements + "]"
+
+  def map[B](transformer:myTransformer[A,B]) : MyList[B]
+  //def flatMap[B](transformer: myTransformer[A,MyList[B]]): MyList[B]
+  def filter(predicate:myPredicate[A]): MyList[A]
+}
+
+object Empty extends MyList[Nothing] {
+
+  def head: Nothing = throw new NoSuchElementException
+  def tail: MyList[Nothing] = throw new NoSuchElementException
+  def isEmpty: Boolean = true
+  def add[B >: Nothing](Element: B): MyList[B] = new cons(Element, Empty)
+  def printElements: String = ""
+  
+  
+  def map[B](transformer:myTransformer[Nothing,B]) : MyList[B] = Empty
+  //def flatMap[B](transformer: myTransformer[Nothing,MyList[B]]): MyList[B] = Empty
+  def filter(predicate:myPredicate[Nothing]): MyList[Nothing] = Empty
+
+}
+
+class cons[+A](h: A, t: MyList[A]) extends MyList[A] {
+
+  def head: A = h
+  def tail: MyList[A] = t
+  def isEmpty: Boolean = false
+  def add[B >: A](Element: B): MyList[B] = new cons(Element, this)
+  def printElements: String =
+    if (t.isEmpty) " " + h
+    else h + " " + t.printElements
+
+  def filter(predicate: myPredicate[A]): MyList[A] =
+    if (predicate.test(h)) new cons(h, t.filter(predicate))
+    else t.filter(predicate)
+
+  def map[B](transformer: myTransformer[A, B]): MyList[B] =
+    new cons(transformer.transform(h), t.map(transformer))
+
+}
+
+
+trait myPredicate[-T] {
+    def test(elem: T): Boolean
+}
+
+trait myTransformer[-A,B] {
+  def transform(elem: A): B
+}
+
+
+object ListTest extends App {
+//  val list = new cons(1, new cons(2, Empty))
+//  println(list.head)
+//  println(list.tail.head)
+//  println(list.add(4).head)
+//  println(list.isEmpty)
+//  println(list.toString())
+val listofintegers: MyList[Int] = new cons(1,new cons(2,Empty))
+val listofstrings: MyList[String] = new cons("hello", Empty)
+
+println(listofintegers.toString())
+println(listofstrings.toString())
+
+println(listofintegers.map(new myTransformer[Int,Int] 
+{
+  override def transform(elem: Int): Int = elem * 2 }
+).toString)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
