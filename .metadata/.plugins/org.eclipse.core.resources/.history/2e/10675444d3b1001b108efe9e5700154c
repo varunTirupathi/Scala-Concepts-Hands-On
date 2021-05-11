@@ -13,11 +13,6 @@ abstract class MyList[+A] {
   def filter(predicate: A => Boolean ): MyList[A]
   //concatenation
   def ++[B >: A](list: MyList[B]): MyList[B]
-  
-  //hofs
-  def forEach(f: A => Unit):Unit
-  
-  
 }
 
  object Empty extends MyList[Nothing] {
@@ -35,8 +30,6 @@ abstract class MyList[+A] {
   
    def ++[B >: Nothing](list: MyList[B]): MyList[B] = list
 
-   //hofs
-   def forEach(f:Nothing => Unit): Unit = ()
 }
 
  class cons[+A](h: A, t: MyList[A]) extends MyList[A] {
@@ -92,12 +85,7 @@ abstract class MyList[+A] {
   def flatMap[B](transformer: A => MyList[B]): MyList[B] = 
     transformer(h) ++ t.flatMap(transformer)
   
-  //hofs
-    
-    def forEach(f: A => Unit): Unit = {
-      f(h)
-      t.forEach(f)
-    }
+  
 
 }
 
@@ -152,7 +140,6 @@ println(listofintegers.flatMap(elem => new cons(elem, new cons(elem + 1, Empty))
 val superadd = (x: Int) => (y: Int) => x + y
 println(superadd(3)(4))
 
-listofintegers.forEach(println)
 
 }
 
